@@ -1,0 +1,76 @@
+/* ПАНЕЛЬ СОРТИРОВКА*/
+.sort-panel {
+  display: flex;
+  width: 100%;
+}
+.triggers-data {
+  width: 11.9%; /*зависит от размера todo, начало 135px*/
+}
+.triggers-data > .triggers-data__top, .triggers-data > .triggers-data__bottom {
+  width: 27px;
+  height: 20px;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.triggers-data > .triggers-data__top > img, .triggers-data > .triggers-data__bottom > img {
+  width: 100%;
+}
+
+
+.triggers-priority {
+  width: 8.8%; /*зависит от размера todo, начало 100px*/
+  text-align: center;
+  color: #6b6c6e;
+  font-weight: 700;
+  padding-right: 32px;
+}
+.triggers-priority > .priority-sort__top, .triggers-priority > .priority-sort__bottom {
+  width: 27px;
+  height: 9px;
+  margin: 0 auto;
+  display: flex;
+}
+.triggers-priority > .priority-sort__top > img, .triggers-priority > .priority-sort__bottom > img {
+  width: 100%;
+  height: 85%;
+  cursor: pointer;
+}
+.priority-sort__reset:hover {
+  color: #77cbfb;
+  cursor: pointer;
+}
+.search {
+  width: 62.8%; /*зависит от размера todo, начало...*/
+  margin-right: 15px; /*зависит от размера todo, начало...*/
+  height: 35px;
+  display: flex;
+  border-bottom: 1px solid #6b6c6e;
+}
+.search > .search__logo {
+  width: 30px;
+  height: 30px;
+}
+.search > .search__logo > img {
+  width: 100%;
+}
+.search-form {
+  width: 94.8%; /*процент от search, начало 570px*/
+}
+.search-form > .search__input {
+  width: 100%;
+  height: 30px;
+  border: none;
+}
+
+.filters-labels {
+  width: 17%; /*зависит от размера todo, начало...*/
+  padding-right: 30px; /*зависит от размера todo, начало...*/
+}
+.filters-labels > .filters-labels__icons {
+  width: 35px;
+  margin: 0 auto;
+}
+.filters-labels > .filters-labels__icons > img {
+  width: 100%;
+  cursor: pointer;
+}

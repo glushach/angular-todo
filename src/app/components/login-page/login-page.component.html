@@ -1,0 +1,22 @@
+<div [ngClass]="{'overlay': !active, 'overlay_not-active': active}">
+  <div class="modal">
+    <div class="modal__subtitle">Login Page</div>
+    <form class="form" action="#" [formGroup]="form" (ngSubmit)="submit()">
+      <label class="form__label">
+        Email
+        <input class="form__input" type="email" name="email" placeholder="Enter your email" maxlength="30" autocomplete="on" formControlName="email">
+        <span *ngIf="form.get('email').invalid && form.get('email').touched">Wrong email</span>
+      </label>
+      <label class="form__label">
+        Password
+        <input class="form__input" type="password" name="password" placeholder="Enter your password, 8 min, 12 max" maxlength="12" autocomplete="on" formControlName="password">
+        <span *ngIf="form.get('password').invalid && form.get('password').touched">Wrong password</span>
+      </label>
+      <button class="form__button" type="submit" [disabled]="form.invalid">Login</button>
+    </form>
+  </div>
+</div> <!--конец модалки для входа на сайт-->
+
+<!-- [ngClass]="{'overlay': active !== 'yes', 'overlay_not-active': active === 'yes'}" -->
+
+<!-- *ngIf="!active" -->

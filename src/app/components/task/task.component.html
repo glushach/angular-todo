@@ -1,0 +1,19 @@
+<div class="current-task current-task_mt">
+  <div class="create-data">
+    <span>{{task.date | date: 'dd.MM.yyyy'}}<br><span>{{task.date | date: 'HH:mm'}}</span></span>
+  </div>
+  <div class="priority">
+    <div class="priority__current">{{task.prior}}</div>
+    <div class="priority__triggers">
+      <div class="priority__top"><img src="https://raw.githubusercontent.com/glushach/todo-list/master/arrows/priority-top.png" alt="priority-top"></div>
+      <div class="priority__bottom"><img src="https://raw.githubusercontent.com/glushach/todo-list/master/arrows/priority-bottom.png" alt="priority-bottom"></div>
+    </div>
+  </div>
+  <div class="task-description task-description_active">{{task.text}}</div>
+
+  <div class="editor-task">
+    <div class="icons-editor"></div>
+    <div class="icons-checked icons-checked_active"></div>
+    <div class="icons-delete" (click)="deleteTask(task)"></div>
+  </div>
+</div>

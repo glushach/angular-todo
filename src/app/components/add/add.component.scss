@@ -1,0 +1,26 @@
+.todo__title {
+  text-transform: uppercase;
+  text-align: center;
+}
+/* Текстарея по добавлению новой задачи */
+.add {
+  display: flex;
+  align-items: center;
+  padding-bottom: 30px;
+}
+.add > .add__input {
+  width: 83.5%; /*зависит от размера todo, начало 975px*/
+  height: 35px;
+  line-height: 35px;
+  border: none;
+  border-bottom: 2px solid #6b6c6e;
+  margin-right: 28px;
+}
+.add > .add__button {
+  width: 120px;
+  height: 50px;
+  background: #618fec;
+  text-transform: uppercase;
+  color: #ffffff;
+  cursor: pointer;
+}

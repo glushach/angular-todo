@@ -1,0 +1,88 @@
+.current-task {
+  display: flex;
+  width: 100%;
+}
+.current-task_mt {
+  margin-top: 30px;
+}
+.create-data {
+  width: 11.9%; /*зависит от размера todo, начало 135px*/
+  text-align: center;
+  font-weight: 700;
+  font-size: 25px;
+  line-height: .8;
+}
+.create-data > span > span {
+  font-size: 18px;
+}
+.priority {
+  width: 8.8%; /*зависит от размера todo, начало 100px*/
+  display: flex;
+  justify-content: space-between;
+  padding: 0 7px;
+}
+.priority > .priority__current {
+  width: 50px;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 24px;
+  background: #6b6c6e;
+}
+.priority > .priority__triggers {
+  width: 18px;
+  height: 38px;
+}
+.priority > .priority__triggers > .priority__top, .priority > .priority__triggers > .priority__bottom {
+  width: 100%;
+  height: 50%;
+}
+.priority__top > img, .priority__bottom > img {
+  width: 100%;
+}
+
+
+.task-description {
+  width: 62.8%; /*зависит от размера todo, начало...*/
+  margin-right: 15px; /*зависит от размера todo, начало...*/
+  min-height: 50px; /*ВНИМАНИЕ - резиновая высота*/
+  padding: 14px 11px;
+  color: #6b6c6e;
+  background: #d1eef4;
+}
+
+.task-description_active {
+  background: #eeeeee;
+}
+
+
+
+
+.editor-task {
+  width: 17%; /*зависит от размера todo, начало...*/
+  padding-right: 30px; /*зависит от размера todo, начало...*/
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.icons-editor, .icons-checked, .icons-delete {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  margin: 0 4px;
+}
+.icons-editor {
+  background: #3f8c3f url('https://raw.githubusercontent.com/glushach/todo-list/master/icons/pencil.png') center center/50% no-repeat;
+}
+.icons-checked {
+  background: #77cbfb url('https://raw.githubusercontent.com/glushach/todo-list/master/icons/checkbox.png') center center/50% no-repeat;
+}
+.icons-checked_active {
+  background-color: #0097f4;
+}
+
+.icons-delete {
+  background: #0097f4 url('https://raw.githubusercontent.com/glushach/todo-list/master/icons/trash.png') center center/50% no-repeat;
+}
