@@ -3,29 +3,36 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { LoginPageComponent } from './components/login-page/login-page.component';
-import { AddComponent } from './components/add/add.component';
-import { SearchComponent } from './components/search/search.component';
-import { TaskListComponent } from './components/task-list/task-list.component';
 
+import { ModelService } from './services/model.service';
 import { TaskService } from './services/task.service';
-import { TaskComponent } from './components/task/task.component';
+import { ConfirmService} from './services/services/confirm.service';
+
+import { LoginPageComponent } from './components/login-page/login-page.component';
+import { TaskAddComponent } from './components/task-add/task-add.component';
+import { TaskContainerComponent } from './components/task-container/task-container.component';
+import { TaskItemComponent } from './components/task-item/task-item.component';
+import { SearchComponent } from './components/sort-triggers/sort-triggers.component';
+import { ConfirmComponent } from './components/confirm/confirm.component';
+import { EditorComponent } from './components/editor/editor.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginPageComponent,
-    AddComponent,
+    TaskAddComponent,
+    TaskContainerComponent,
+    TaskItemComponent,
     SearchComponent,
-    TaskListComponent,
-    TaskComponent
+    ConfirmComponent,
+    EditorComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [TaskService],
+  providers: [ ModelService, TaskService, ConfirmService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

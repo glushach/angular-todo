@@ -1,0 +1,43 @@
+/* MODAL CONFIRM */
+.confirm {
+  display: none;
+}
+.confirm_active {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-confirm {
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  min-height: 130px;
+  padding: 40px 28px 10px 28px;
+  background: #eeeeee;
+}
+.modal-confirm > .modal-confirm__question {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+.buttons-block {
+  display: flex;
+  width: 100%;
+}
+.button-no, .button-yes {
+  width: 50%;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  color: #0097f4;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+

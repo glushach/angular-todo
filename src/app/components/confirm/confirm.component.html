@@ -1,0 +1,9 @@
+<div [ngClass]="{'confirm': !taskSvc.activeConfirm, 'confirm_active':  taskSvc.activeConfirm}">
+  <div class="modal-confirm"> 
+    <div class="modal-confirm__question">Delete task?</div>
+    <div class="buttons-block">
+      <div class="button-no" (click)="taskSvc.onNo()">No</div>
+      <div class="button-yes button-active" (click)="this.taskSvc.remove(taskSvc.indexOfComfirm)">Yes</div>
+    </div>
+  </div>
+</div> <!--конец модального окна вопроса об удалении задачи-->

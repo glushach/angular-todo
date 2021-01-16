@@ -1,44 +1,71 @@
 import { Injectable } from '@angular/core';
+import { ModelService } from './model.service';
+import { BehaviorSubject } from 'rxjs';
 
-import { Task } from '../models/Task';
-
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class TaskService {
-  tasks: Task[];
-  constructor() {
-    this.tasks = [];
+
+  activeConfirm: boolean = false; //регулирует появление confirm
+  answearConfirm: boolean = false //регулирует ответ пользователя
+
+  private items: any[] = [];
+
+
+  private subj: BehaviorSubject<any> = new BehaviorSubject([]);
+
+  indexOfComfirm: number;
+
+  constructor(
+    private model: ModelService
+  ) {
+    this.load();
   }
 
-  getTasks() {
-    if(!localStorage.getItem('tasks')) {
-      return this.tasks;
-    } else {
-      this.tasks = JSON.parse(localStorage.getItem('tasks'));
-      return this.tasks;
-    }
+
+  
+
+// поток
+  get todos() {
+    return this.subj.asObservable();
   }
 
-  addTask(task: Task) {
-    this.tasks.unshift(task); //эта строка выводит задачи без перезагрузки страницы
-    let tasks: Task[] = [];
-    if(!localStorage.getItem('tasks')) {
-      tasks.unshift(task);
-      localStorage.setItem('tasks', JSON.stringify(tasks));
-    } else {
-      tasks = JSON.parse(localStorage.getItem('tasks'));
-      tasks.unshift(task);
-      localStorage.setItem('tasks', JSON.stringify(tasks));
-    }
+  add(task: string) {
+    this.items.unshift({
+      date: Date.now(),
+      prior: 1,
+      text: task,
+      done: false
+  });
+    this.subj.next(this.items);
+    this.save();
   }
 
-  deleteTask(task: Task) {
-    for(let i = 0; i < this.tasks.length; i++) {
-      if(task == this.tasks[i]) {
-        this.tasks.splice(i, 1);
-        localStorage.setItem('tasks', JSON.stringify(this.tasks)); //обновляет данные в хранилище
-      }
-    }
+  // Обработка ответа YES из confirm
+  remove(index: any) {
+    this.items.splice(index, 1); //передача indexOfComfirm из onConfirm
+    // console.log(index);
+    this.subj.next(this.items);
+    this.save();
+    this.activeConfirm = false;
+  }
+
+  load() {
+    this.items = this.model.load();
+    this.subj.next(this.items);
+  }
+
+  // Для редактирования задачи
+  save() {
+    this.model.save(this.items);
+  }
+
+  // Для вызова модального окна confirm и обработки ответа NO
+  onConfirm(index: number) {
+    this.activeConfirm = true;
+    this.indexOfComfirm = index; //получение индекса задачи
+    // console.log(this.indexOfComfirm); 
+  }
+  onNo() {
+    this.activeConfirm = false;
   }
 }

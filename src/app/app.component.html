@@ -2,12 +2,12 @@
 
 <div class="container" [ngClass]="{'container_active': appPage === 'yes', 'container':  appPage !== 'yes'}">
   <div class="todo">
-    <app-add (onAdd)="updateTasks($event)"></app-add>
-    <app-search></app-search>
-    <app-task-list></app-task-list>
-
+    <app-task-container></app-task-container>
   </div>
 </div>
+
+<!-- Модальные окна -->
+<app-editor></app-editor>
 
 
 
