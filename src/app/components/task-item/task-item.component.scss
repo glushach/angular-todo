@@ -49,6 +49,9 @@
   min-height: 50px; /*ВНИМАНИЕ - резиновая высота*/
   padding: 14px 11px;
   color: #6b6c6e;
+}
+
+.task-description_none {
   background: #d1eef4;
 }
 
@@ -76,8 +79,12 @@
 .icons-editor {
   background: #3f8c3f url('https://raw.githubusercontent.com/glushach/todo-list/master/icons/pencil.png') center center/50% no-repeat;
 }
+
 .icons-checked {
-  background: #77cbfb url('https://raw.githubusercontent.com/glushach/todo-list/master/icons/checkbox.png') center center/50% no-repeat;
+  background: url('https://raw.githubusercontent.com/glushach/todo-list/master/icons/checkbox.png') center center/50% no-repeat;
+}
+.icons-checked_none {
+  background-color: #77cbfb;
 }
 .icons-checked_active {
   background-color: #0097f4;

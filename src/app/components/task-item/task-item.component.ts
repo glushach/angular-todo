@@ -1,4 +1,7 @@
-import { Component, EventEmitter, Input, Output, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CheckedService } from 'src/app/services/services/checked.service';
+import { EditorService } from 'src/app/services/services/editor.service';
+import { PriorityService } from 'src/app/services/services/priority.service';
 import {TaskService} from '../../services/task.service';
 
 @Component({
@@ -14,7 +17,12 @@ export class TaskItemComponent{
 
   
 
-  constructor(public taskSvc:TaskService) { }
+  constructor(
+    public prioritySvs: PriorityService,
+    public taskSvc:TaskService, 
+    public editorSvc: EditorService, 
+    public checkedSvc: CheckedService
+    ) { }
 
   ngOnInit(): void {
   }

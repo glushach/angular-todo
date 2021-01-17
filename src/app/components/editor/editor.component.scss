@@ -1,14 +1,15 @@
 /* Модалка  по редактированию текста задачи*/
 .editor {
   display: none;
-  position:fixed;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, .7);
 }
 .editor_active {
   display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 .modal-editor {
   position:absolute;

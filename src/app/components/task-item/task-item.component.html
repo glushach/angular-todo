@@ -5,20 +5,29 @@
   <div class="priority">
     <div class="priority__current">{{data.prior}}</div>
     <div class="priority__triggers">
-      <div class="priority__top"><img src="https://raw.githubusercontent.com/glushach/todo-list/master/arrows/priority-top.png" alt="priority-top"></div>
-      <div class="priority__bottom"><img src="https://raw.githubusercontent.com/glushach/todo-list/master/arrows/priority-bottom.png" alt="priority-bottom"></div>
+      <div class="priority__top" (click)="this.prioritySvs.increase(index)">
+        <img src="https://raw.githubusercontent.com/glushach/todo-list/master/arrows/priority-top.png" alt="priority-top">
+      </div>
+      <div class="priority__bottom" (click)="this.prioritySvs.decrease(index)">
+        <img src="https://raw.githubusercontent.com/glushach/todo-list/master/arrows/priority-bottom.png" alt="priority-bottom">
+      </div>
     </div>
   </div>
-  <div class="task-description task-description_active">{{data.text}}</div>
+  <div class="task-description" [ngClass]="{'task-description_active': !data.done, 'task-description_none': data.done}">{{data.text}}</div>
 
   <div class="editor-task">
-    <div class="icons-editor"></div>
-    <div class="icons-checked icons-checked_active"></div>
+    <div class="icons-editor" (click)="this.editorSvc.onEditor(index)"></div>
+    <div class="icons-checked" [ngClass]="{'icons-checked_active': !data.done, 'icons-checked_none':  data.done}"
+    (click)="this.checkedSvc.onChecked(index)"></div>
     <div class="icons-delete" (click)="this.taskSvc.onConfirm(index)"></div>
   </div>
   <!-- Модальное окно confirm. Каждому компоненту task-item будет навешено модальное окно -->
   <app-confirm ></app-confirm>
+  <!-- Модальное окно редактирования -->
+  <app-editor></app-editor>
 </div>
 
 
 <!-- (click)="this.taskSvc.remove(index)" -->
+
+

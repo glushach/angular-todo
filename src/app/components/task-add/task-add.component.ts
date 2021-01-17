@@ -19,7 +19,7 @@ export class TaskAddComponent implements OnInit {
     if(!this.model.length || this.model.length > 200){
       return window.alert('Min 1, Max 200 characters!');
     }
-    this.taskSvc.add(this.model);
+    this.taskSvc.add(this.model); //отобразится в на 34 строке файла task.service.ts
     this.model = '';
   }
 

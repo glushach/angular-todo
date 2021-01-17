@@ -19,7 +19,7 @@ export class ModelService {
   // Получаю из locala Storage
   load(){
     let dataStr = this.storage.getItem(this.KEY);
-    return dataStr ? JSON.parse(dataStr) : []; //превращение в JS объект
+    return dataStr ? JSON.parse(dataStr) : []; //превращение JSON в JS объект
   }
   
 

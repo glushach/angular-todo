@@ -2,18 +2,21 @@ import { Injectable } from '@angular/core';
 import { ModelService } from './model.service';
 import { BehaviorSubject } from 'rxjs';
 
+// Сервис по добавлению и удалению задач
+
 @Injectable()
 export class TaskService {
 
   activeConfirm: boolean = false; //регулирует появление confirm
   answearConfirm: boolean = false //регулирует ответ пользователя
+  indexOfComfirm: number;
 
-  private items: any[] = [];
+  public items: any[] = [];
 
 
   private subj: BehaviorSubject<any> = new BehaviorSubject([]);
 
-  indexOfComfirm: number;
+
 
   constructor(
     private model: ModelService
@@ -22,7 +25,6 @@ export class TaskService {
   }
 
 
-  
 
 // поток
   get todos() {
@@ -50,13 +52,13 @@ export class TaskService {
   }
 
   load() {
-    this.items = this.model.load();
+    this.items = this.model.load(); //получение данных из local storage
     this.subj.next(this.items);
   }
 
-  // Для редактирования задачи
+  
   save() {
-    this.model.save(this.items);
+    this.model.save(this.items); // Обновление данных в local storage
   }
 
   // Для вызова модального окна confirm и обработки ответа NO
