@@ -9,6 +9,7 @@ import { TaskService } from './services/task.service';
 import { EditorService } from './services/services/editor.service';
 import { CheckedService } from './services/services/checked.service';
 import { PriorityService } from './services/services/priority.service';
+import { AlertService } from './services/services/alert.service';
 
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { TaskAddComponent } from './components/task-add/task-add.component';
@@ -17,6 +18,9 @@ import { TaskItemComponent } from './components/task-item/task-item.component';
 import { SearchComponent } from './components/sort-triggers/sort-triggers.component';
 import { ConfirmComponent } from './components/confirm/confirm.component';
 import { EditorComponent } from './components/editor/editor.component';
+import { AlertComponent } from './components/alert/alert.component';
+import { FilterPipe } from './pipes/filter.pipe';
+
 
 
 @NgModule({
@@ -29,6 +33,8 @@ import { EditorComponent } from './components/editor/editor.component';
     SearchComponent,
     ConfirmComponent,
     EditorComponent,
+    AlertComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +43,8 @@ import { EditorComponent } from './components/editor/editor.component';
   ],
   providers: [ 
     ModelService, 
-    TaskService, 
+    TaskService,
+    AlertService,
     EditorService, 
     CheckedService,
     PriorityService

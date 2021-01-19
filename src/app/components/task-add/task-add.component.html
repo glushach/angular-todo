@@ -1,5 +1,6 @@
 <h1 class="todo__title">todo list</h1>
 <form class="add" action="#" id="task">
-  <input class="add__input" type="text" name="text" placeholder="Task" maxlength="70" autocomplete="on" [(ngModel)]="model">
+  <textarea class="add__textarea" type="text" name="text" placeholder="Task" maxlength="200" autocomplete="on" [(ngModel)]="model"></textarea>
   <button class="add__button" (click)="add()">Add</button>
 </form>
+<app-alert></app-alert>

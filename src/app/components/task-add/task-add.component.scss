@@ -8,13 +8,15 @@
   align-items: center;
   padding-bottom: 30px;
 }
-.add > .add__input {
+.add > .add__textarea {
   width: 83.5%; /*зависит от размера todo, начало 975px*/
   height: 35px;
-  line-height: 35px;
+  line-height: 33px; /*При одной строке не будет вертикального скрола*/
   border: none;
   border-bottom: 2px solid #6b6c6e;
   margin-right: 28px;
+  resize: none;
+  padding-left: 3px;
 }
 .add > .add__button {
   width: 120px;

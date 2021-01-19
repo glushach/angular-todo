@@ -16,7 +16,6 @@ export class EditorService {
 
   // Данные из textarea
   model: any = ''; //входные даннные
-  newTextContent: any = ''; //отвалидированные данные
 
   constructor(public task: TaskService) { }
 
@@ -42,9 +41,9 @@ export class EditorService {
       item = `${item.substring(0, 15)}`;
       arr.push(item);
       });
-      this.newTextContent = arr.join(' ');
+      this.model = arr.join(' '); //отвалидированные входные данные
     }
-    this.task.items[index].text = this.newTextContent; //получение ключа text объекта [index]
+    this.task.items[index].text = this.model; //получение ключа text объекта [index]
     this.task.save(); //обновление задачи в local storage
   }
 }

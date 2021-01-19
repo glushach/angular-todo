@@ -6,6 +6,7 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable()
 export class TaskService {
+  search = ''; //для поисковой строки
 
   activeConfirm: boolean = false; //регулирует появление confirm
   answearConfirm: boolean = false //регулирует ответ пользователя

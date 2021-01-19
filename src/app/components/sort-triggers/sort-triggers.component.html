@@ -13,7 +13,7 @@
       <img src="https://raw.githubusercontent.com/glushach/todo-list/master/icons/search.png" alt="search">
     </div>
     <form class="search-form" action="#">
-        <input class="search__input" type="text" name="search" maxlength="50" autocomplete="on">
+        <input class="search__input" type="text" name="search" maxlength="50" autocomplete="on" [(ngModel)]="this.taskSvc.search">
     </form>
   </div><!--end search-->
   <div class="filters-labels">

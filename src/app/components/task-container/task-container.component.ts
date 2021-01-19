@@ -11,8 +11,9 @@ export class TaskContainerComponent implements OnInit {
 
   items: Observable<any>;
 
-  confir;
-  constructor(private taskSvc: TaskService) { }
+  // confir;
+  
+  constructor(public taskSvc: TaskService) { }
 
   ngOnInit() {
     this.items = this.taskSvc.todos;

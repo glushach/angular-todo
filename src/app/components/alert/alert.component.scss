@@ -1,0 +1,44 @@
+/* MODAL CONFIRM */
+.alert {
+  display: none;
+}
+.alert_active {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.modal-alert {
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 250px;
+  min-height: 130px;
+  padding: 20px 28px;
+  background: #eeeeee;
+}
+.modal-alert > .modal-confirm__question {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+  margin-bottom: 25px;
+}
+.buttons-block {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.button-ok {
+  width: 50%;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  color: #fff;
+  background: #0097f4;
+  cursor: pointer;
+  text-transform: uppercase;
+}

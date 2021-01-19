@@ -2,9 +2,9 @@
 <app-sort-triggers></app-sort-triggers>
 
 <div class="task-list">
-  <app-task-item [data]="item" [index]="i" *ngFor="let item of items | async; let i = index"></app-task-item>
+  <app-task-item [data]="item" [index]="i" *ngFor="let item of items | async | filter:this.taskSvc.search; let i = index"></app-task-item>
   <h4 *ngIf="(items | async)?.length === 0">
     List is empty! 
   </h4>
-</div>
+</div> 
 
