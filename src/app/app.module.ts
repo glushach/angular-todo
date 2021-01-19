@@ -10,6 +10,9 @@ import { EditorService } from './services/services/editor.service';
 import { CheckedService } from './services/services/checked.service';
 import { PriorityService } from './services/services/priority.service';
 import { AlertService } from './services/services/alert.service';
+import { SortDateService } from './services/services/sort-date.service';
+import { SortPriorService } from './services/services/sort-prior.service';
+import { SortCheckedService } from './services/services/sort-checked.service';
 
 import { LoginPageComponent } from './components/login-page/login-page.component';
 import { TaskAddComponent } from './components/task-add/task-add.component';
@@ -20,6 +23,7 @@ import { ConfirmComponent } from './components/confirm/confirm.component';
 import { EditorComponent } from './components/editor/editor.component';
 import { AlertComponent } from './components/alert/alert.component';
 import { FilterPipe } from './pipes/filter.pipe';
+
 
 
 
@@ -47,7 +51,10 @@ import { FilterPipe } from './pipes/filter.pipe';
     AlertService,
     EditorService, 
     CheckedService,
-    PriorityService
+    PriorityService,
+    SortDateService,
+    SortPriorService,
+    SortCheckedService
   ],
   bootstrap: [AppComponent]
 })

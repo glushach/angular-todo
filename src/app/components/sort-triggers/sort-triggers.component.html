@@ -1,12 +1,20 @@
 <div class="sort-panel">
   <div class="triggers-data">
-    <div class="triggers-data__top"><img src="https://raw.githubusercontent.com/glushach/todo-list/master/arrows/data-sort-top.png" alt="data-sort-top"></div>
-    <div class="triggers-data__bottom"><img src="https://raw.githubusercontent.com/glushach/todo-list/master/arrows/data-sort-bottom.png" alt="data-sort-bottom"></div>
+    <div class="triggers-data__top" (click)="this.SortDateSevc.onDateNew()">
+      <img src="https://raw.githubusercontent.com/glushach/todo-list/master/arrows/data-sort-top.png" alt="data-sort-top">
+    </div>
+    <div class="triggers-data__bottom" (click)="this.SortDateSevc.onDateOld()">
+      <img src="https://raw.githubusercontent.com/glushach/todo-list/master/arrows/data-sort-bottom.png" alt="data-sort-bottom">
+    </div>
   </div><!--end triggers-data-->
   <div class="triggers-priority">
-    <div class="priority-sort__top"><img src="https://raw.githubusercontent.com/glushach/todo-list/master/arrows/priority-sort-top.png" alt="priority-sort-top"></div>
-    <span class="priority-sort__reset">123</span>
-    <div class="priority-sort__bottom"><img src="https://raw.githubusercontent.com/glushach/todo-list/master/arrows/priority-sort-bottom.png" alt="priority-sort-bottom"></div>
+    <div class="priority-sort__top" (click)="this.SortPriorSevc.onPriorTop()">
+      <img src="https://raw.githubusercontent.com/glushach/todo-list/master/arrows/priority-sort-top.png" alt="priority-sort-top">
+    </div>
+    <span>123</span>
+    <div class="priority-sort__bottom" (click)="this.SortPriorSevc.onPriorBottom()">
+      <img src="https://raw.githubusercontent.com/glushach/todo-list/master/arrows/priority-sort-bottom.png" alt="priority-sort-bottom">
+    </div>
   </div><!--end triggers-priority-->
   <div class="search">
     <div class="search__logo">
@@ -17,6 +25,8 @@
     </form>
   </div><!--end search-->
   <div class="filters-labels">
-    <div class="filters-labels__icons"><img src="https://raw.githubusercontent.com/glushach/todo-list/master/icons/filter.png" alt="filter"></div>
+    <div class="filters-labels__icons" (click)="this.SortCheckedSvc.onChecked()">
+      <img src="https://raw.githubusercontent.com/glushach/todo-list/master/icons/filter.png" alt="filter">
+    </div>
   </div><!--end filters-labels-->
 </div><!--end sort-panel-->

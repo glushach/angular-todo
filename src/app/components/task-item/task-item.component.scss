@@ -40,6 +40,7 @@
 }
 .priority__top > img, .priority__bottom > img {
   width: 100%;
+  cursor: pointer;
 }
 
 
@@ -75,6 +76,7 @@
   height: 38px;
   border-radius: 50%;
   margin: 0 4px;
+  cursor: pointer;
 }
 .icons-editor {
   background: #3f8c3f url('https://raw.githubusercontent.com/glushach/todo-list/master/icons/pencil.png') center center/50% no-repeat;

@@ -10,6 +10,7 @@ import { TaskService } from './services/task.service';
 export class AppComponent implements OnInit {
   activeTodo = false;
   appPage = localStorage.getItem('isEntrance');
+
   
   constructor(
     private taskSvc: TaskService
@@ -27,7 +28,6 @@ export class AppComponent implements OnInit {
   isHidden(active) {
     this.appPage = active;
   }
-
 
 }
 
