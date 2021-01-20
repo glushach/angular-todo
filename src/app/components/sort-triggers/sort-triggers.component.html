@@ -6,7 +6,7 @@
     <div class="triggers-data__bottom" (click)="this.SortDateSevc.onDateOld()">
       <img src="https://raw.githubusercontent.com/glushach/todo-list/master/arrows/data-sort-bottom.png" alt="data-sort-bottom">
     </div>
-  </div><!--end triggers-data-->
+  </div>
   <div class="triggers-priority">
     <div class="priority-sort__top" (click)="this.SortPriorSevc.onPriorTop()">
       <img src="https://raw.githubusercontent.com/glushach/todo-list/master/arrows/priority-sort-top.png" alt="priority-sort-top">
@@ -15,7 +15,7 @@
     <div class="priority-sort__bottom" (click)="this.SortPriorSevc.onPriorBottom()">
       <img src="https://raw.githubusercontent.com/glushach/todo-list/master/arrows/priority-sort-bottom.png" alt="priority-sort-bottom">
     </div>
-  </div><!--end triggers-priority-->
+  </div>
   <div class="search">
     <div class="search__logo">
       <img src="https://raw.githubusercontent.com/glushach/todo-list/master/icons/search.png" alt="search">
@@ -23,10 +23,10 @@
     <form class="search-form" action="#">
         <input class="search__input" type="text" name="search" maxlength="50" autocomplete="on" [(ngModel)]="this.taskSvc.search">
     </form>
-  </div><!--end search-->
+  </div>
   <div class="filters-labels">
     <div class="filters-labels__icons" (click)="this.SortCheckedSvc.onChecked()">
       <img src="https://raw.githubusercontent.com/glushach/todo-list/master/icons/filter.png" alt="filter">
     </div>
-  </div><!--end filters-labels-->
-</div><!--end sort-panel-->
+  </div>
+</div>
